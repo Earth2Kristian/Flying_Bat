@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Data;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     public float timerCounts;
     public TMP_Text timerText;
     public TMP_Text timerText2;
+    public TMP_Text finalScoreText;
+    public TMP_Text finalScoreText2;
 
     // UI System Variables
     public GameObject playStartUI;
@@ -60,6 +63,8 @@ public class GameManager : MonoBehaviour
     {
         // This function will allow to stop the game when the bird collided
         gameoverUI.SetActive(true);
+        finalScoreText.text = "YOUR TIME SCORE: " + Mathf.Round(timerCounts);
+        finalScoreText2.text = "YOUR TIME SCORE: " + Mathf.Round(timerCounts);
         Time.timeScale = 0;
     }
 
